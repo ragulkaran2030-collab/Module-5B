@@ -1,38 +1,36 @@
-## NumPy Program: Find Indices Where Elements in Array x are Greater Than or Equal to Corresponding Elements in Array y
+# NumPy Program: Column-wise Sorting of a 2D Array
 
 ## 🎯 Aim
-To write a Python program using **NumPy** that finds the indices where elements in array `x` are greater than or equal to their corresponding elements in array `y`.
+To write a **NumPy** program that sorts the elements in each column of a given 2D array in ascending order.
 
 ## 🧠 Algorithm
-1. **Import NumPy**: Import the NumPy library.
-2. **Define Arrays**: Define two NumPy arrays, `x` and `y`, with the same shape (i.e., same number of elements).
-3. **Use Boolean Indexing**: 
-   - `x > y` gives a boolean array where elements of `x` are greater than `y`.
-   - `x == y` gives a boolean array where elements of `x` are equal to `y`.
-4. **Find Indices**: Use `np.where()` to get the indices where the conditions `x >= y` are satisfied.
-5. **Print Indices**: Print the indices where the condition holds true.
+
+1. **Import NumPy**: Start by importing the NumPy library.
+2. **Get Input**: Accept a 2D NumPy array from the user.
+3. **Sort Column-wise**: Use the `np.sort()` function with `axis=0` to sort each column in ascending order.
+4. **Store Result**: Store the sorted result in a new array.
+5. **Display Output**: Print the original array and the column-wise sorted array.
 
 ## 🧾 Program
+Add code here
 ~~~
 import numpy as np
 
-arr = np.array([[1, 2, 3],
-                [4, 5, 6],
-                [7, 8, 9]])
+arr = np.array([[5, 2, 9],
+                [1, 7, 6],
+                [3, 4, 8]])
 
-new_col = np.array([10, 11, 12])
-
-arr = np.delete(arr, 1, axis=1)
-arr = np.insert(arr, 1, new_col, axis=1)
-
-print("Updated Array:")
+print("Original Array:")
 print(arr)
-~~~
-Add code here
 
+sorted_arr = np.sort(arr, axis=0)
+
+print("\nColumn-wise Sorted Array:")
+print(sorted_arr)
+~~~
 ## Output
 
-<img width="1569" height="997" alt="Screenshot 2025-10-20 153843 - Copy" src="https://github.com/user-attachments/assets/770ad0a9-8173-495f-a5de-73c67e9eff40" />
+<img width="1548" height="999" alt="Screenshot 2025-10-20 153750" src="https://github.com/user-attachments/assets/0918d8f9-e44a-4864-9944-555952d9728a" />
 
 ## Result
-The NumPy program successfully deletes the second column from a given 2D array and inserts a new column at the same position.
+The NumPy program successfully sorts the elements in each column of a given 2D array in ascending order.
